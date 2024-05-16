@@ -187,7 +187,7 @@
     $input.value = ''
 
     playing = false
-    console.log({playing});
+    
     words = INITIAL_WORDS.toSorted(() => Math.random() - 0.5).slice(0, 32)
     currentTime = INITIAL_TIME
 
@@ -263,7 +263,7 @@
     if(key === 'Backspace'){
       const $prevWord = $currentWord?.previousElementSibling
       const $prevLetter = $currentLetter?.previousElementSibling
-      console.log({$prevWord,$prevLetter });
+     
 
       if(!$prevWord && !$prevLetter){
         event.preventDefault()
@@ -299,7 +299,6 @@
 
     const currentWord = $currentWord.innerText.trim()
     $input.maxLength = currentWord.length
-    console.log({value: $input.value, currentWord});
     
     const $allLetters = $currentWord.querySelectorAll('letter')
     $allLetters.forEach($letter => $letter.classList.remove('correct', 'incorrect'))
